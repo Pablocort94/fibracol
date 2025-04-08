@@ -1,0 +1,93 @@
+.price-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    max-width: 300px;
+}
+
+.price-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 195, 255, 0.6);
+
+}
+
+.price {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.speed {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.benefits {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.benefits li {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.select-btn {
+    
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    background: linear-gradient(90deg, #007bff, #00c3ff); /* Initial Cool Blue */
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 1s ease-in-out, transform 0.2s;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.8), 0 0 20px rgba(0, 195, 255, 0.6);
+}
+
+.select-btn span {
+    position: relative;
+    z-index: 2; /* Ensures text stays above the effect */
+  }
+
+.select-btn::before {
+    content: "";
+    position: absolute;
+    top: -1px;      /* ⬆️ extend 1px above */
+    left: -1px;     /* ⬅️ extend 1px to the left */
+    right: -1px;    /* ➡️ extend 1px to the right */
+    bottom: -1px;   /* ⬇️ extend 1px below */
+    background: linear-gradient(90deg, #ff7300 0%, #ff5100 50%, #ff0000 100%);
+    z-index: 1;
+    transition: transform 1.5s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  .select-btn:hover::before {
+    transform: scaleX(1);
+
+  }
+  
+  /* ⚡ Glow Effect on Full Charge */
+  .select-btn:hover {
+    box-shadow: 0 0 25px rgba(255, 69, 0, 1), 0 0 50px rgba(255, 0, 0, 1);
+  }
+  
+  /* ⚡ Active State: Final Burst */
+  .select-btn:active {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 1), 0 0 80px rgba(255, 69, 0, 1);
+  }
+  

@@ -1,0 +1,115 @@
+.about-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  min-height: 50vh;
+  background: #C0C0C0;
+  padding: 10px 20px;
+  gap: 40px;
+  position: relative; /* So the ::after triangle stays attached */
+  z-index: 1;
+}
+
+.about-container::after {
+  content: "";
+  position: absolute;
+  top: 0; /* 👈 Now at the top */
+  left: 0;
+  width: 100%;
+  height: 100px; /* Adjust height for triangle depth */
+  background-color: #1a1f71; /* Match this to the background of your next section */
+  clip-path: polygon(0 0, 50% 100%, 100% 0); /* 👈 V-shape pointing down */
+  z-index: -1;
+  padding-top: 30px;
+
+
+}
+
+.about-divider {
+  width: 100px;
+  height: 4px;
+  margin: 0 auto 20px;
+  border: none;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  text-align: left;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  padding-left: 40px;
+  font-weight: 1000;
+  letter-spacing: 1px;
+  color:#1a1f71;  
+
+}
+
+.about-text p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #1a1f71;
+  padding-left: 40px;
+  text-align: justify;
+  font-weight: 500;
+
+}
+
+.feature-slider-wrapper {
+  max-width: 600px; /* or whatever width you want */
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .about-text {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .feature-slider-wrapper {
+    max-width: 100%;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .about-container {
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .about-container::after {
+    height: 60px;
+  }
+}
